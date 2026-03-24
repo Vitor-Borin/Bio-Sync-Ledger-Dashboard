@@ -569,6 +569,40 @@ h3 {
     }
 }
 
+/* ── Página única (capa / index) ───────────────────────── */
+
+body.cover-page {
+    overflow-y: auto;
+    min-height: 100vh;
+    height: auto;
+}
+
+.cover-static {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(40px, 10vw, 88px) clamp(24px, 5vw, 80px);
+    text-align: center;
+}
+
+.cover-static .glow {
+    position: absolute;
+}
+
+.cover-static .cta-btn {
+    margin-top: 28px;
+}
+
+.cover-static .cover-footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+}
+
 /* ── Reduced motion ────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
