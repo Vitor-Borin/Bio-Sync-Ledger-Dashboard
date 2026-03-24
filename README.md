@@ -22,34 +22,6 @@ Os números e o feed são **simulados** — servem para demonstrar UX, hierarqui
 
 ---
 
-## Rodar localmente
-
-Na raiz do projeto:
-
-```bash
-npx serve .
-```
-
-Depois abra:
-
-- [http://localhost:3000](http://localhost:3000) — capa (ou a porta que o `serve` indicar)
-- `/dashboard.html` — dashboard
-
-Qualquer servidor estático (`python -m http.server`, Live Server no VS Code, etc.) também funciona.
-
----
-
-## Deploy na Vercel
-
-1. Conecte o repositório ao [Vercel](https://vercel.com).
-2. **Framework Preset:** *Other*.
-3. **Build Command** e **Output Directory:** deixe em branco (não há build).
-4. A raiz do repositório deve ser a pasta onde estão `index.html`, `dashboard.html` e `assets/`.
-
-O Vercel entrega **`/`** como `index.html` automaticamente. Não é obrigatório `vercel.json`.
-
----
-
 ## Estrutura do repositório
 
 ```
