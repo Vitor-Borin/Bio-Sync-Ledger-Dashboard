@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Sync Ledger — Dashboard</title>
+    <meta name="description" content="Bio-Sync Ledger — campo (clima, safra, demanda), tokenização do impacto e ledger auditável. Dashboard conceitual.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar">
+            <div class="topbar-left">
+                <span class="logo-mark">B</span>
+                <div class="logo-text">
+                    <p class="logo-title">Bio-Sync Ledger</p>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span class="status-dot"></span>
+                <span class="status-label" id="navClock">Conectado — 00:00:00</span>
+            </div>
+        </header>
+
+        <main class="workspace">
+            <section class="product-brief" aria-labelledby="productBriefHeading">
+                <header class="product-brief__masthead">
+                    <div class="product-brief__masthead-text">
+                        <h2 id="productBriefHeading" class="product-brief__masthead-title">Proposta de valor</h2>
+                        <p class="product-brief__masthead-sub">Duas pernas do mesmo produto: <span class="product-brief__masthead-accent product-brief__masthead-accent--field">antecipação no campo</span> e <span class="product-brief__masthead-accent product-brief__masthead-accent--diff">tokenização no mercado</span>.</p>
+                    </div>
+                </header>
+
+                <div class="product-brief__layout">
+                    <article class="product-brief__panel product-brief__panel--field" aria-labelledby="pbFieldTitle">
+                        <div class="product-brief__panel-top">
+                            <span class="product-brief__index product-brief__index--field" aria-hidden="true">01</span>
+                            <div class="product-brief__panel-headings">
+                                <h3 id="pbFieldTitle" class="product-brief__panel-title">Inteligência no campo</h3>
+                                <p class="product-brief__panel-tagline">Onde o excesso aparece primeiro</p>
+                            </div>
+                            <span class="product-brief__pill product-brief__pill--field">Streaming</span>
+                        </div>
+                        <p id="campoBannerTitle" class="product-brief__body">
+                            No campo, nosso algoritmo cruza <span class="product-brief__hl product-brief__hl--field">dados climáticos</span>, <span class="product-brief__hl product-brief__hl--field">histórico de safra</span> e <span class="product-brief__hl product-brief__hl--field">demanda de mercado</span> em tempo real, identificando <strong class="product-brief__strong-field">excesso de produção antes mesmo da colheita acontecer</strong>.
+                        </p>
+                        <ul class="product-brief__tags" aria-label="Entradas do modelo no campo">
+                            <li>Dados climáticos</li>
+                            <li>Histórico de safra</li>
+                            <li>Demanda de mercado</li>
+                        </ul>
+                    </article>
+
+                    <div class="product-brief__divider" role="presentation"></div>
+
+                    <article class="product-brief__panel product-brief__panel--diff" aria-labelledby="pbDiffTitle">
+                        <div class="product-brief__panel-top">
+                            <span class="product-brief__index product-brief__index--diff" aria-hidden="true">02</span>
+                            <div class="product-brief__panel-headings">
+                                <h3 id="pbDiffTitle" class="product-brief__panel-title">Diferencial no mercado</h3>
+                                <p class="product-brief__panel-tagline">Tokenização do impacto</p>
+                            </div>
+                            <span class="product-brief__pill product-brief__pill--diff">Auditável</span>
+                        </div>
+                        <p class="product-brief__body">
+                            Nosso grande diferencial é a <strong class="product-brief__strong-diff">Tokenização do Impacto</strong>: o que seria <strong>prejuízo contábil</strong> vira <strong>ativo digital auditável</strong>. Sustentabilidade deixa de ser custo e passa a ser <strong>vantagem competitiva</strong> para <strong>varejo</strong> e <strong>agronegócio</strong>.
+                        </p>
+                        <p class="product-brief__pullquote">
+                            Não entregamos só comida — <strong>otimizamos a eficiência do mercado global</strong>.
+                        </p>
+                        <ul class="product-brief__points" aria-label="Pilares do diferencial">
+                            <li>
+                                <span class="product-brief__dot product-brief__dot--diff"></span>
+                                <div>
+                                    <span class="product-brief__point-title">Prejuízo → ativo</span>
+                                    <span class="product-brief__point-desc">Impacto em token, rastreável no ledger.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="product-brief__dot product-brief__dot--diff"></span>
+                                <div>
+                                    <span class="product-brief__point-title">ESG que paga</span>
+                                    <span class="product-brief__point-desc">Varejo e agro ganham posição com dados reais.</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="product-brief__dot product-brief__dot--diff"></span>
+                                <div>
+                                    <span class="product-brief__point-title">Mercado global</span>
+                                    <span class="product-brief__point-desc">Menos desperdício, melhor alocação em escala.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <div class="kpi-block">
+                <p class="kpi-block__label">Indicadores <span class="kpi-block__sep">·</span> demonstração ao vivo</p>
+                <section class="kpi-row">
+                <article class="kpi kpi--field">
+                    <p class="kpi-label">Toneladas com sinal pré-colheita</p>
+                    <p class="kpi-value kpi-value--green" id="statToneladas">0</p>
+                    <p class="kpi-delta kpi-delta--positive">Saída do modelo: excesso antes da colheita</p>
+                </article>
+                <article class="kpi">
+                    <p class="kpi-label">Empresas Parceiras</p>
+                    <p class="kpi-value kpi-value--blue" id="statEmpresas">0</p>
+                    <p class="kpi-delta kpi-delta--positive">+8 novas este mês</p>
+                </article>
+                <article class="kpi kpi--token">
+                    <p class="kpi-label">Tokens emitidos (impacto)</p>
+                    <p class="kpi-value kpi-value--blue" id="statTokens">0</p>
+                    <p class="kpi-delta kpi-delta--positive">Prejuízo contábil → ativo auditável</p>
+                </article>
+                <article class="kpi">
+                    <p class="kpi-label">Créditos Carbono (tCO₂e)</p>
+                    <p class="kpi-value kpi-value--orange" id="statCarbono">0</p>
+                    <p class="kpi-delta kpi-delta--positive">R$ 2.1M economizados</p>
+                </article>
+                <article class="kpi">
+                    <p class="kpi-label">Famílias Beneficiadas</p>
+                    <p class="kpi-value kpi-value--green" id="statFamilias">0</p>
+                    <p class="kpi-delta kpi-delta--positive">33M+ projeção anual</p>
+                </article>
+                </section>
+            </div>
+
+            <section class="grid-main">
+                <article class="panel panel--pipeline">
+                    <header class="panel-head">
+                        <h2 class="panel-title">Pipeline Bio-Sync</h2>
+                        <span class="badge badge--live">LIVE</span>
+                    </header>
+                    <p class="pipeline-callout" role="note">
+                        <span class="pipeline-callout__label">Operação</span>
+                        Depois do <strong>sinal de campo</strong> (bloco 01), a cadeia roda em sequência até o <strong>token de impacto</strong> (bloco 02).
+                    </p>
+                    <div class="flow">
+                        <div class="flow-node">
+                            <span class="chip chip--orange"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5 1-4.8 2.3-2.1 2.1-2.3 4.9-1 6.9 1 1.5 2.6 2.2 5.2 2.2"/><path d="M14.1 6a7 7 0 0 0-8.1 7"/></svg></span>
+                            <span class="flow-name">Campo</span>
+                        </div>
+                        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                        <div class="flow-node">
+                            <span class="chip chip--blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></span>
+                            <span class="flow-name">PDV</span>
+                        </div>
+                        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                        <div class="flow-node">
+                            <span class="chip chip--green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M12 18v-6"/></svg></span>
+                            <span class="flow-name">IA</span>
+                        </div>
+                        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                        <div class="flow-node">
+                            <span class="chip chip--purple"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="6" height="10" rx="1"/><rect x="16" y="7" width="6" height="10" rx="1"/><path d="M8 12h8"/><path d="m11 9 3 3-3 3"/></svg></span>
+                            <span class="flow-name">Ledger</span>
+                        </div>
+                        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                        <div class="flow-node">
+                            <span class="chip chip--cyan"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg></span>
+                            <span class="flow-name">Rota</span>
+                        </div>
+                        <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                        <div class="flow-node">
+                            <span class="chip chip--green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></span>
+                            <span class="flow-name">Token</span>
+                        </div>
+                    </div>
+                    <div class="pipeline-body">
+                        <p class="pipeline-lede">Com o alerta de campo já gerado, a cadeia executa: <strong>PDV</strong> (varejo), <strong>IA</strong> consolidando sinais, <strong>ledger</strong> (registro), <strong>rota</strong> (logística) e <strong>token</strong> (impacto fiscal / ESG).</p>
+                        <div class="pipeline-lanes" id="pipelineLanes" aria-label="Status por etapa do pipeline">
+                            <div class="lane"><span class="lane-name">Campo</span><span class="lane-stat" data-lane="0">—</span></div>
+                            <div class="lane"><span class="lane-name">PDV</span><span class="lane-stat" data-lane="1">—</span></div>
+                            <div class="lane"><span class="lane-name">IA</span><span class="lane-stat" data-lane="2">—</span></div>
+                            <div class="lane"><span class="lane-name">Ledger</span><span class="lane-stat" data-lane="3">—</span></div>
+                            <div class="lane"><span class="lane-name">Rota</span><span class="lane-stat" data-lane="4">—</span></div>
+                            <div class="lane"><span class="lane-name">Token</span><span class="lane-stat" data-lane="5">—</span></div>
+                        </div>
+                    </div>
+                    <div class="pipeline-footer">
+                        <div class="pipeline-meta">
+                            <span class="pipeline-label">Pipeline de hoje</span>
+                            <span class="pipeline-pct" id="pipelinePercent">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="pipelineBar"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel panel--chart-main">
+                    <header class="panel-head">
+                        <h2 class="panel-title">Impacto do sinal pré-colheita</h2>
+                    </header>
+                    <p class="panel-sub">Quando o excesso é visto <strong>antes da colheita</strong> (clima + safra + demanda), a cadeia responde mais cedo — menos desperdício projetado, mais toneladas resgatadas.</p>
+                    <div class="chart-wrap">
+                        <canvas id="chartMain"></canvas>
+                    </div>
+                </article>
+
+                <article class="panel panel--donut">
+                    <header class="panel-head">
+                        <h2 class="panel-title">Onde o excesso aparece primeiro</h2>
+                    </header>
+                    <p class="panel-sub">Mix dos alertas gerados ainda na fase pré-colheita (campo + cooperativas).</p>
+                    <div class="chart-wrap chart-wrap--sm">
+                        <canvas id="chartDonut"></canvas>
+                    </div>
+                </article>
+
+                <article class="panel panel--ledger">
+                    <header class="panel-head">
+                        <h2 class="panel-title">Blockchain &amp; Tokens</h2>
+                        <span class="badge badge--audit">AUDITÁVEL</span>
+                    </header>
+                    <p class="panel-sub panel-sub--ledger">Onde a <strong>tokenização do impacto</strong> vira registro on-chain: prejuízo evitado e sustentabilidade como <strong>ativo</strong>, não só relatório.</p>
+                    <div class="blockchain-row" id="blockchainRow"></div>
+                    <div class="table-scroll">
+                        <table class="tbl">
+                            <thead>
+                                <tr>
+                                    <th>Hash</th>
+                                    <th>Empresa</th>
+                                    <th>Tokens</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tokenTableBody"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="panel panel--feed">
+                    <header class="panel-head">
+                        <h2 class="panel-title">Feed — tempo real</h2>
+                    </header>
+                    <p class="panel-sub">Cruzamento <strong>clima + safra + demanda</strong> e alertas de <strong>excesso antes da colheita</strong>.</p>
+                    <ul class="feed-list" id="feedList"></ul>
+                </article>
+
+                <article class="panel panel--projection">
+                    <header class="panel-head">
+                        <h2 class="panel-title">Projeção 12 meses</h2>
+                    </header>
+                    <div class="chart-wrap chart-wrap--short">
+                        <canvas id="chartProjection"></canvas>
+                    </div>
+                    <div class="impact-row">
+                        <div class="impact-card">
+                            <p class="impact-val impact-val--green">-42%</p>
+                            <p class="impact-lbl">Desperdício</p>
+                        </div>
+                        <div class="impact-card">
+                            <p class="impact-val impact-val--blue">R$ 8.7M</p>
+                            <p class="impact-lbl">Economia Fiscal</p>
+                        </div>
+                        <div class="impact-card">
+                            <p class="impact-val impact-val--green">1.2M</p>
+                            <p class="impact-lbl">Refeições</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <a class="cta-float" href="pitch.html">Ver Pitch &rarr;</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="assets/js/dashboard/config.js"></script>
+    <script src="assets/js/dashboard/charts.js"></script>
+    <script src="assets/js/dashboard/simulation.js"></script>
+</body>
+</html>
