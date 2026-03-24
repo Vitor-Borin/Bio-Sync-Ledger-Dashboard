@@ -22,9 +22,22 @@ Ou sirva a pasta com qualquer servidor HTTP, por exemplo:
 npx serve .
 ```
 
+## Deploy (Vercel)
+
+Site **estático**: no projeto Vercel use **Framework Preset: Other**, sem comando de build, raiz do repositório = pasta do projeto.
+
+A URL `/` precisa apontar para o dashboard. Este repo inclui:
+
+- `index.html` — redireciona para `dashboard.html`
+- `vercel.json` — rewrite de `/` → `/dashboard.html`
+
+Depois de dar **push**, faça um novo deploy (ou deixe o deploy automático rodar).
+
 ## Estrutura
 
 ```
+├── index.html          # entrada / redireciona ao dashboard
+├── vercel.json         # rewrite / → dashboard (Vercel)
 ├── pitch.html
 ├── dashboard.html
 ├── assets/
